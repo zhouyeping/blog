@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container">
+    <div class="page-header">
+        <h2>{{blog['title']}} <small class="pull-right">{{blog['add_time']}}</small> </h2>
+    </div>
+    <div>
+        <p>{{blog['content']}}</p>
+    </div>
+</div>
+
+{% endblock %}
