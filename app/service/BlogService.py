@@ -19,3 +19,7 @@ class BlogService:
         new_blog = Blog(1, title, content, add_time)
         db.session.add(new_blog)
         db.session.commit()
+
+    def update_blog(self, id, title, content):
+        Blog.query.filter(Blog.blog_id == id).update({'title': title, 'content': content})
+        db.session.commit()

@@ -1,5 +1,5 @@
 import os
-basedir = os.path.abspath(os.path.dirname(__file__))
+basedir = os.path.join(os.path.dirname(__file__))
 
 
 class Config:
@@ -11,10 +11,10 @@ class Config:
         pass
 
 
+
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-        'mysql+pymysql://root:@localhost:3306/file_repository?charset=utf8'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root@localhost:3306/myblog?charset=utf8'
 
 
 class TestingConfig(Config):

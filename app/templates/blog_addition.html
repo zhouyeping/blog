@@ -3,22 +3,19 @@
 {% block body %}
 
 <div class="container">
-    <form method="post" action="/blog/add" class="form-horizontal" role="form">
-        <div class="form-group">
-            <label for="" class="col-md-1 control-label  pull-left">标题</label>
-            <div class="col-md-10">
-                <input name="title" type="text" class="form-control" placeholder="请输入标题">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-1 control-label">文本框</label>
-            <div class="col-md-10">
-                <textarea name="content" class="form-control" rows="10"></textarea>
-            </div>
-        </div>
-        <div class="form-group">
-            <button  type="submit" class="center-block btn btn-primary">确认添加</button>
-        </div>
+    <form role="form" action="/blog/add" method="post">
+          <div class="form-group">
+            <label> 标题 </label>
+            <input type="text" class="form-control" name="title" placeholder="请输入名称">
+          </div>
+
+          <div class="form-group">
+            <label >内容</label>
+              <textarea type="text" class="form-control" name="content" rows="20"  cols="50"></textarea>
+          </div>
+
+
+          <button type="submit" class="btn btn-default">添加</button>
     </form>
 </div>
 
