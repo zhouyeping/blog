@@ -1,54 +1,18 @@
-{% extends "base.html" %}
-{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h2>Welcome</h2>
+<a href="/history">上传历史</a>
+<form action="/upload" enctype="multipart/form-data" method="post">
+    <input type="file" name="upload_file"><br>
+    <input type="submit" value="上传">
+</form>
 
-<div class="container">
-
-    <div class="jumbotron">
-        <h2>Welcome</h2>
-        <p>欢迎使用Blog Note.</p>
-        <button class="btn btn-success pull-right">注册</button>
-    </div>
-
-    <div class="page-header">
-        <h2><small>面板，列表组，页面标题，超大屏幕,表格</small></h2>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    总共 10 篇博文
-                </div>
-                <div class="panel-body">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>编号</th>
-                                <th>标题</th>
-                                <th>修改时间</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for blog in all_blog %}
-                                <tr>
-                                    <td>{{blog['blog_id']}}</td>
-                                    <td>{{blog['title']}}</td>
-                                    <td>{{blog['add_time']}}</td>
-                                    <td><a href="/blog/{{blog['blog_id']}}">查看</a></td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+</body>
+</html>
 
 
-</div>
-
-
-
-{% endblock %}

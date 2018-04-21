@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% block body %}
+
+        <form method="post" action="/blog/update" class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="" class="col-md-1 control-label  pull-left">标题</label>
+            <div class="col-md-10">
+                <input name="title" type="text" class="form-control" value="{{ blog['title'] }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-1 control-label">文本框</label>
+            <div class="col-md-10">
+                <textarea name="content" class="form-control" rows="10">{{ blog['content'] }}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <button  type="submit" class="center-block btn btn-primary">确认添加</button>
+        </div>
+    </form>
+
+{% endblock %}
